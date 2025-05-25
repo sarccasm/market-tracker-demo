@@ -1,0 +1,21 @@
+<div style="max-width: 600px; margin: 0 auto; font-family: Arial;">
+  <div style="margin-bottom: 1rem;">
+    <input [(ngModel)]="symbol" placeholder="Market data" />
+    <button (click)="subscribe()">Subscribe</button>
+  </div>
+
+  <div>
+    <p><strong>Symbol:</strong> {{ symbol }}</p>
+    <p><strong>Price:</strong> {{ price }}</p>
+    <p><strong>Time:</strong> {{ time }}</p>
+  </div>
+
+  <div style="margin-top: 2rem;">
+    <canvas baseChart
+      [datasets]="chartData"
+      [labels]="chartLabels"
+      [options]="chartOptions"
+      chartType="line">
+    </canvas>
+  </div>
+</div>
