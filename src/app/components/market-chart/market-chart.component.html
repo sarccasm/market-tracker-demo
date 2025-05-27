@@ -1,21 +1,19 @@
-<div style="max-width: 600px; margin: 0 auto; font-family: Arial;">
-  <div style="margin-bottom: 1rem;">
-    <input [(ngModel)]="symbol" placeholder="Market data" />
-    <button (click)="subscribe()">Subscribe</button>
+<div class="container">
+  <input [(ngModel)]="symbol" type="text" />
+  <button (click)="subscribe()">Subscribe</button>
+
+  <div class="market-data">
+    <div><b>Symbol:</b> {{ symbol }}</div>
+    <div><b>Price:</b> {{ price }}</div>
+    <div><b>Time:</b> {{ time }}</div>
   </div>
 
-  <div>
-    <p><strong>Symbol:</strong> {{ symbol }}</p>
-    <p><strong>Price:</strong> {{ price }}</p>
-    <p><strong>Time:</strong> {{ time }}</p>
-  </div>
-
-  <div style="margin-top: 2rem;">
+  <div class="chart-container">
     <canvas baseChart
-      [datasets]="chartData"
-      [labels]="chartLabels"
-      [options]="chartOptions"
-      chartType="line">
+            [datasets]="chartData"
+            [labels]="chartLabels"
+            [options]="chartOptions"
+            chartType="line">
     </canvas>
   </div>
 </div>
